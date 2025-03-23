@@ -15,3 +15,10 @@ class ExampleUnitTest {
         assertEquals(4, 2 + 2)
     }
 }
+
+class BrokenTest {
+    @Test
+    fun fall() {
+        assertEquals(5, 4)
+    }
+}
