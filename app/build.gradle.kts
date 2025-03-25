@@ -64,7 +64,7 @@ android {
 }
 
 dependencies {
-//rrrfeve fefeff
+//rrrfeve fefeff gfr
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
