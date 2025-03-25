@@ -23,21 +23,20 @@ android {
 
     signingConfigs {
         create("release") {
-            val keystoreConfigs = rootProject.file("keystore/keystore_config")
+            val keystoreConfigs = file("keystore/keystore_config")
 
             if (keystoreConfigs.exists()) {
                 val keystoreProperties = Properties()
                 keystoreProperties.load(FileInputStream(keystoreConfigs))
-
                 storeFile = file(keystoreProperties["storeFile"] as String)
                 storePassword = keystoreProperties["storePassword"] as String
                 keyAlias = keystoreProperties["keyAlias"] as String
                 keyPassword = keystoreProperties["keyPassword"] as String
             } else {
-                storeFile = file("keysore/my_app_keystore")
+                storeFile = file("keystore/my_app_keystore.keystore")
                 storePassword = System.getenv("KEYSTORE_PASSWORD")
                 keyAlias = System.getenv("RELEASE_SIGN_KEY_ALIAS")
-                keyPassword = System.getenv("RRELEASE_SIGN_KEY_PASSWORD")
+                keyPassword = System.getenv("RELEASE_SIGN_KEY_PASSWORD")
             }
         }
     }
@@ -49,6 +48,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("release")
         }
     }
     compileOptions {
@@ -64,7 +64,7 @@ android {
 }
 
 dependencies {
-//rrrfeve fefeff
+//rrrfeve fefeff gfr
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)

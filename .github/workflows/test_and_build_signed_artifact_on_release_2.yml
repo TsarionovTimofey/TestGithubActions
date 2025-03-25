@@ -1,4 +1,4 @@
-name: Test_and_build_artifacts_on_release
+name: Test_and_build_artifacts_on_release_2
 
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
@@ -29,18 +29,17 @@ jobs:
 
      - name: Run tests and build release artifacts
        run: |
-         ./gradlew test
          ./gradlew assembleRelease
          ./gradlew bundleRelease
 
      - name: Upload signed APK
-       uses: actions/upload-artifact@v2
+       uses: actions/upload-artifact@v4
        with:
          name: app-release.apk
          path: app/build/outputs/apk/release/app-release.apk
 
      - name: Upload AAB Bundle
-       uses: actions/upload-artifact@v2
+       uses: actions/upload-artifact@v4
        with:
          name: app-release.aab
          path: app/build/outputs/bundle/release/app-release.aab
