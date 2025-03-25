@@ -1,8 +1,11 @@
-name: PR_unit_tests_2
+name: PR_unit_tests
 
 on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: ["release/1.2.5"]
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
   unit-test:
