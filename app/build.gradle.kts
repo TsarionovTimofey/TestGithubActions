@@ -34,7 +34,7 @@ android {
                 keyAlias = keystoreProperties["keyAlias"] as String
                 keyPassword = keystoreProperties["keyPassword"] as String
             } else {
-                storeFile = file("keysore/my_app_keystore")
+                storeFile = file("keysore/my_app_keystore.keystore")
                 storePassword = System.getenv("KEYSTORE_PASSWORD")
                 keyAlias = System.getenv("RELEASE_SIGN_KEY_ALIAS")
                 keyPassword = System.getenv("RRELEASE_SIGN_KEY_PASSWORD")
