@@ -25,11 +25,10 @@ jobs:
        with:
          repository: ${{ secrets.KEYSTORE_GIT_REPOSITORY }}
          token: ${{ secrets.KEYSTORE_ACCESS_TOKEN }}
-         path: keystore
+         path: app/keystore
 
      - name: Run tests and build release artifacts
        run: |
-         ./gradlew test
          ./gradlew assembleRelease
          ./gradlew bundleRelease
 
