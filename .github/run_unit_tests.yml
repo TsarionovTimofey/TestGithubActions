@@ -4,7 +4,6 @@ on:
   pull_request:
     branches: [ "main" ]
   commit:
-     branches: ["release/1.2.5"]
 
 jobs:
   unit-test:
